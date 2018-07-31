@@ -5,12 +5,12 @@ module.exports = {
     head: {
         title: 'w3c-前端社区',
         meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: 'Nuxt.js project' }
         ],
         link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
     /*
@@ -33,7 +33,16 @@ module.exports = {
                     exclude: /(node_modules)/
                 })
             }
-        }
-    }
+        },
+        vendor: ['iview','element-ui']
+    },
+    plugins: [
+        '~/plugins/iview',
+        '~/plugins/element-ui'
+    ],
+    css: [
+        'element-ui/lib/theme-chalk/index.css',
+        'iview/dist/styles/iview.css'
+    ],
 }
 

@@ -1,22 +1,13 @@
 <template>
-    <section class="container">
-        <app-footer/>
-    </section>
+    
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-import AppFooter from '~/components/AppFooter.vue'
-
 export default {
     data () {
         return {
             title: 'Hello World!'
         }
-    },
-    components: {
-        AppLogo,
-        AppFooter
     },
     head () {
         return {
@@ -26,17 +17,5 @@ export default {
             ]
         }
     },
-    created(){
-        console.info(process.env)
-    }
 }
 </script>
-
-<style>
-.container {
-  
-}
-
-
-</style>
-

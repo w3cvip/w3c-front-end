@@ -9,6 +9,9 @@ module.exports = {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: 'Nuxt.js project' }
         ],
+        script: [
+            { src: '//at.alicdn.com/t/font_772287_9du5p5vjgxt.js' }
+        ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
@@ -41,8 +44,11 @@ module.exports = {
         '~/plugins/element-ui'
     ],
     css: [
+        '~/static/css/style.css',
         'element-ui/lib/theme-chalk/index.css',
         'iview/dist/styles/iview.css'
+
     ],
+    
 }
 

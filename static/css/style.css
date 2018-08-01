@@ -1,0 +1,38 @@
+@import '//at.alicdn.com/t/font_772287_9du5p5vjgxt.css';
+
+.el-menu .el-menu-item{
+    font-size: 14px;
+}
+html {
+}
+body {
+    font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif;
+    letter-spacing: .03em;
+    font-size: 16px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    background: #e5e5e5!important;
+    color: #222527;
+    padding-top: 65px!important;
+}
+.el-menu--horizontal>.el-menu-item{
+    height: 55px!important;
+    line-height: 55px!important;
+}
+.ivu-card-body {
+    padding: 0!important;
+}
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s, transform .4s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    opacity: 1;
+}
+.page-enter, .page-leave-active {
+    opacity: 0.5;
+    transform: rotateY(100deg);
+}

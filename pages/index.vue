@@ -1,11 +1,19 @@
 <template>
     <section class="container">
-        <app-footer/>
+        <div class="">
+            <app-header/>
+        </div>
+        <div class="">
+            <nuxt-child/>
+        </div>
+        <div class="">
+            <app-footer/>
+        </div>
     </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppHeader from '~/components/AppHeader.vue'
 import AppFooter from '~/components/AppFooter.vue'
 
 export default {
@@ -15,7 +23,7 @@ export default {
         }
     },
     components: {
-        AppLogo,
+        AppHeader,
         AppFooter
     },
     head () {
@@ -32,10 +40,8 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  
-}
+<style scoped>
+
 
 
 </style>

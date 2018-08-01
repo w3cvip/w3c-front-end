@@ -5,34 +5,7 @@
 </template>
 
 <style>
-html {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC,
-    Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  background: #e5e5e5!important;
-  color: #222527;
-}
-body {
-     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC,
-    Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei,
-    sans-serif;
-    font-size: 16px;
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-    background: #e5e5e5!important;
-    color: #222527;
-}
+
 
 
 *,

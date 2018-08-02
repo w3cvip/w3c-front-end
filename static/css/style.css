@@ -1,4 +1,4 @@
-@import '//at.alicdn.com/t/font_772287_9du5p5vjgxt.css';
+@import '//at.alicdn.com/t/font_772287_1qrffima39v.css';
 
 .el-menu .el-menu-item{
     font-size: 14px;
@@ -19,7 +19,7 @@ body {
     color: #222527;
     padding-top: 65px!important;
 }
-.el-menu--horizontal>.el-menu-item{
+.header_menu .el-menu--horizontal>.el-menu-item{
     height: 55px!important;
     line-height: 55px!important;
 }
@@ -35,4 +35,10 @@ body {
 .page-enter, .page-leave-active {
     opacity: 0.5;
     transform: rotateY(100deg);
+}
+.ivu-card-head {
+    padding: 6px 16px!important;
+    border-bottom-color: #eee;
+    color: #777;
+    background: #fafafa;
 }

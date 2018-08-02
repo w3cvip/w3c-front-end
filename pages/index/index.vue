@@ -75,7 +75,7 @@
                     </el-col>
                 </el-row>
             </div>
-            <div class="">
+            <div class="index_essence">
                 <Card>
                     <p slot="title">社区精华帖</p>
                     <div class="topic_list">
@@ -88,7 +88,11 @@
                             <div class="topic_content">
                                 <nuxt-link to="/topics" class="node_title">
                                     <div class="topic_title">
-                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 <i class="iconfont icon-zuanshi"></i>
+                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 
+                                        <el-tooltip class="item" effect="dark" content="精华帖" placement="top">
+                                            <i class="iconfont icon-zuanshi"></i>
+                                        </el-tooltip>
+    
                                     </div>
                                 </nuxt-link>
                                 <div class="topic_user">
@@ -179,6 +183,142 @@
                                 <div class="badge">99</div>
                             </div>
                         </div>
+                    </div>
+                </Card>
+            </div>
+            <div class="index_node">
+                <Card :bordered="false">
+                    <p slot="title">社区节点</p>
+                    <div class="node_list">
+                        <div class="node_info">
+                            <div class="node_root">
+                                Front-End
+                            </div>
+                            <div class="node_content">
+                                <span>
+                                    <a href="http://">V8</a>
+                                </span>
+                                <span>
+                                    <a href="http://">ECMAScript</a>
+                                </span>
+                                <span>
+                                    <a href="http://">JAVA</a>
+                                </span>
+                                <span>
+                                    <a href="http://">重构</a>
+                                </span>
+                                <span>
+                                    <a href="http://">求职</a>
+                                </span>
+                                <span>
+                                    <a href="http://">开源项目</a>
+                                </span>
+                                <span>
+                                    <a href="http://">JavaScript</a>
+                                </span>
+                                <span>
+                                    <a href="http://">Css</a>
+                                </span>
+                                <span>
+                                    <a href="http://">V8</a>
+                                </span>
+                                <span>
+                                    <a href="http://">测试</a>
+                                </span>
+                                <span>
+                                    <a href="http://">NodeJs</a>
+                                </span>
+                                <span>
+                                    <a href="http://">部署</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="node_info">
+                            <div class="node_root">
+                                Front-End
+                            </div>
+                            <div class="node_content">
+                                <span>
+                                    <a href="http://">V8</a>
+                                </span>
+                                <span>
+                                    <a href="http://">ECMAScript</a>
+                                </span>
+                                <span>
+                                    <a href="http://">JAVA</a>
+                                </span>
+                                <span>
+                                    <a href="http://">重构</a>
+                                </span>
+                                <span>
+                                    <a href="http://">求职</a>
+                                </span>
+                                <span>
+                                    <a href="http://">开源项目</a>
+                                </span>
+                                <span>
+                                    <a href="http://">JavaScript</a>
+                                </span>
+                                <span>
+                                    <a href="http://">Css</a>
+                                </span>
+                                <span>
+                                    <a href="http://">V8</a>
+                                </span>
+                                <span>
+                                    <a href="http://">测试</a>
+                                </span>
+                                <span>
+                                    <a href="http://">NodeJs</a>
+                                </span>
+                                <span>
+                                    <a href="http://">部署</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+            <div class="index_city">
+                <Card :bordered="false">
+                    <p slot="title">热门城市</p>
+                    <div class="city_list">
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
+                        <span>
+                            <a href="http://">北京</a>
+                        </span>
                     </div>
                 </Card>
             </div>
@@ -297,5 +437,44 @@ export default {
     border-radius: 10px;
     position: relative;
     background-color: #CFD3E6;
+}
+.topic_title .iconfont{
+    color:  #3BD54E;
+}
+.index_node{
+    margin: 20px 0;
+}
+.node_list{
+    padding: 20px 20px;
+}
+.node_info{
+    display: flex;
+}
+.node_info .node_root{
+    width: 120px;
+    text-align: right;
+    margin-right: 20px;
+    color: #aaa;
+}
+.node_info .node_content{
+    flex: 1;
+}
+.node_info .node_content span{
+    margin-bottom: 10px;
+    padding: 0px 30px;
+    display: inline-block;
+}
+.node_info .node_content span a{
+    color: #333;
+}
+.node_info .node_content span a:hover{
+    border-bottom: 1px solid #333;
+}
+.city_list{
+    padding: 20px 0px;
+    text-align: center;
+}
+.city_list span{
+    padding: 0px 15px;
 }
 </style>

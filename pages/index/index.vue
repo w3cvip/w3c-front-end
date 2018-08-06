@@ -79,104 +79,23 @@
                 <Card>
                     <p slot="title">社区精华帖</p>
                     <div class="topic_list">
-                        <div class="topic_info">
+                        <div class="topic_info" v-for="item in topicsList" :key="item.id">
                             <div class="topic_img">
                                 <nuxt-link to="/users/es6china">
-                                    <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
+                                    <img :src="item.user.avatar_url" alt="" srcset="">
                                 </nuxt-link>
                             </div>
                             <div class="topic_content">
                                 <nuxt-link to="/topics" class="node_title">
                                     <div class="topic_title">
-                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 
+                                        <span class="node">{{item.node_name}}</span> {{item.title | topicsTitle}}
                                         <el-tooltip class="item" effect="dark" content="精华帖" placement="top">
                                             <i class="iconfont icon-zuanshi"></i>
                                         </el-tooltip>
-    
                                     </div>
                                 </nuxt-link>
                                 <div class="topic_user">
-                                    <nuxt-link to="/users/es6china">es6china</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">es6china</nuxt-link>回复于 <Time :time="time" />
-                                </div>
-                            </div>
-                            <div class="topic_repcount">
-                                <div class="badge">99</div>
-                            </div>
-                        </div>
-                        <div class="topic_info">
-                            <div class="topic_img">
-                                <nuxt-link to="/users/es6china">
-                                    <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
-                                </nuxt-link>
-                            </div>
-                            <div class="topic_content">
-                                <nuxt-link to="/topics" class="node_title">
-                                    <div class="topic_title">
-                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 <i class="iconfont icon-zuanshi"></i>
-                                    </div>
-                                </nuxt-link>
-                                <div class="topic_user">
-                                    <nuxt-link to="/users/es6china">es6china</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">es6china</nuxt-link>回复于 <Time :time="time" />
-                                </div>
-                            </div>
-                            <div class="topic_repcount">
-                                <div class="badge">99</div>
-                            </div>
-                        </div>
-                        <div class="topic_info">
-                            <div class="topic_img">
-                                <nuxt-link to="/users/es6china">
-                                    <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
-                                </nuxt-link>
-                            </div>
-                            <div class="topic_content">
-                                <nuxt-link to="/topics" class="node_title">
-                                    <div class="topic_title">
-                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 <i class="iconfont icon-zuanshi"></i>
-                                    </div>
-                                </nuxt-link>
-                                <div class="topic_user">
-                                    <nuxt-link to="/users/es6china">es6china</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">es6china</nuxt-link>回复于 <Time :time="time" />
-                                </div>
-                            </div>
-                            <div class="topic_repcount">
-                                <div class="badge">99</div>
-                            </div>
-                        </div>
-                        <div class="topic_info">
-                            <div class="topic_img">
-                                <nuxt-link to="/users/es6china">
-                                    <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
-                                </nuxt-link>
-                            </div>
-                            <div class="topic_content">
-                                <nuxt-link to="/topics" class="node_title">
-                                    <div class="topic_title">
-                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 <i class="iconfont icon-zuanshi"></i>
-                                    </div>
-                                </nuxt-link>
-                                <div class="topic_user">
-                                    <nuxt-link to="/users/es6china">es6china</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">es6china</nuxt-link>回复于 <Time :time="time" />
-                                </div>
-                            </div>
-                            <div class="topic_repcount">
-                                <div class="badge">99</div>
-                            </div>
-                        </div>
-                        <div class="topic_info">
-                            <div class="topic_img">
-                                <nuxt-link to="/users/es6china">
-                                    <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
-                                </nuxt-link>
-                            </div>
-                            <div class="topic_content">
-                                <nuxt-link to="/topics" class="node_title">
-                                    <div class="topic_title">
-                                        <span class="node">Vue</span> 给 w3c 社区新人的一封信 <i class="iconfont icon-zuanshi"></i>
-                                    </div>
-                                </nuxt-link>
-                                <div class="topic_user">
-                                    <nuxt-link to="/users/es6china">es6china</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">es6china</nuxt-link>回复于 <Time :time="time" />
+                                    <nuxt-link to="/users/es6china">{{item.user.login}}</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">{{item.last_reply_user_login}}</nuxt-link>回复于 <Time :time="item.created_at"/>
                                 </div>
                             </div>
                             <div class="topic_repcount">
@@ -326,13 +245,36 @@
     </div>
 </template>
 <script>
+import api from '~/untils/api'
+import axios from 'axios'
 export default {
     data() {
         return {
+            topicsList:[],
             name: '11111',
             time: (new Date()).getTime() - 60 * 3 * 1000,
+
         };
     },
+    methods:{
+        getuserinfo(){
+            api({
+                url: '/api/v3/topics',
+            }).then((resp) => {
+               this.topicsList = resp.data.topics
+            })
+        }
+    },
+    filters:{
+        topicsTitle:function(val){
+            // console.info(val)
+            // let value = val.substring(0,20)
+            return val
+        },
+    },
+    created(){
+        this.getuserinfo()
+    }
    
 }
 </script>
@@ -437,6 +379,11 @@ export default {
     border-radius: 10px;
     position: relative;
     background-color: #CFD3E6;
+    left: 25px;
+}
+.topic_title{
+    height: 30px;
+    overflow:hidden;
 }
 .topic_title .iconfont{
     color:  #3BD54E;

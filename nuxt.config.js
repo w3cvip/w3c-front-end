@@ -37,7 +37,7 @@ module.exports = {
                 })
             }
         },
-        vendor: ['iview','element-ui']
+        vendor: ['iview','element-ui','axios']
     },
     plugins: [
         '~/plugins/iview',
@@ -49,6 +49,9 @@ module.exports = {
         'iview/dist/styles/iview.css'
 
     ],
-    
+    cache: {
+        max: 1000,
+        maxAge: 900000
+    }
 }
 

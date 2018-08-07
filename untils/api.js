@@ -19,20 +19,15 @@ var service = axios.create({
 // let parseToken = JSON.parse(getToken);
 //拦截网络请求开始
 service.interceptors.request.use(config => {
-    // 请求头添加token , 就给头部带上token
-    if (sessionStorage.getItem('token')) {
-        config.headers.Authorization = getEntity.token_type +" "+ getEntity.access_token; // 让每个请求携带token  
-    }
-    // 检测如果请求为post，进行转换为JSON字符串（一般情况下不需要）
+    
+    // if (sessionStorage.getItem('token')) {
+    //     config.headers.Authorization = getEntity.token_type +" "+ getEntity.access_token; // 让每个请求携带token  
+    // }
     if (config.method === 'post') {
         config.data = JSON.stringify(config.data)
     }
-    // 设置请求头
-    // 请求头常见的有以下几种方式，可根据需要自行修改
-    // ’application/json’,’application/x-www-form-urlencoded’,’multipart/form-data’
-    // Axios默认为’application/json’
     config.headers = {
-        'Content-Type':'application/x-www-form-urlencoded'
+        'Content-Type':'application/json'
     }
     return config;
 },error => {

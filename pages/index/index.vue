@@ -109,89 +109,13 @@
                 <Card :bordered="false">
                     <p slot="title">社区节点</p>
                     <div class="node_list">
-                        <div class="node_info">
+                        <div class="node_info" v-for="item in nodesList" :key="item.id">
                             <div class="node_root">
-                                Front-End
+                                {{item.section_name}}
                             </div>
                             <div class="node_content">
                                 <span>
-                                    <a href="http://">V8</a>
-                                </span>
-                                <span>
-                                    <a href="http://">ECMAScript</a>
-                                </span>
-                                <span>
-                                    <a href="http://">JAVA</a>
-                                </span>
-                                <span>
-                                    <a href="http://">重构</a>
-                                </span>
-                                <span>
-                                    <a href="http://">求职</a>
-                                </span>
-                                <span>
-                                    <a href="http://">开源项目</a>
-                                </span>
-                                <span>
-                                    <a href="http://">JavaScript</a>
-                                </span>
-                                <span>
-                                    <a href="http://">Css</a>
-                                </span>
-                                <span>
-                                    <a href="http://">V8</a>
-                                </span>
-                                <span>
-                                    <a href="http://">测试</a>
-                                </span>
-                                <span>
-                                    <a href="http://">NodeJs</a>
-                                </span>
-                                <span>
-                                    <a href="http://">部署</a>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="node_info">
-                            <div class="node_root">
-                                Front-End
-                            </div>
-                            <div class="node_content">
-                                <span>
-                                    <a href="http://">V8</a>
-                                </span>
-                                <span>
-                                    <a href="http://">ECMAScript</a>
-                                </span>
-                                <span>
-                                    <a href="http://">JAVA</a>
-                                </span>
-                                <span>
-                                    <a href="http://">重构</a>
-                                </span>
-                                <span>
-                                    <a href="http://">求职</a>
-                                </span>
-                                <span>
-                                    <a href="http://">开源项目</a>
-                                </span>
-                                <span>
-                                    <a href="http://">JavaScript</a>
-                                </span>
-                                <span>
-                                    <a href="http://">Css</a>
-                                </span>
-                                <span>
-                                    <a href="http://">V8</a>
-                                </span>
-                                <span>
-                                    <a href="http://">测试</a>
-                                </span>
-                                <span>
-                                    <a href="http://">NodeJs</a>
-                                </span>
-                                <span>
-                                    <a href="http://">部署</a>
+                                    <a href="http://">{{item.name}}</a>
                                 </span>
                             </div>
                         </div>
@@ -251,29 +175,53 @@ export default {
     data() {
         return {
             topicsList:[],
+            nodesList:[],
+            sourceMaps:{},
+            nameMaps:{},
             name: '11111',
             time: (new Date()).getTime() - 60 * 3 * 1000,
 
         };
     },
-    methods:{
-        getuserinfo(){
-            api({
-                url: '/api/v3/topics',
-            }).then((resp) => {
-               this.topicsList = resp.data.topics
-            })
-        }
-    },
     filters:{
         topicsTitle:function(val){
-            // console.info(val)
-            // let value = val.substring(0,20)
             return val
         },
     },
+    methods:{
+        getTopics(){
+            api({
+                url: '/api/v3/topics',
+                data:{
+                    limit:100
+                }
+            }).then((resp) => {
+                let length = 0
+                let obj = resp.data.topics
+                for(let key in obj){
+                    length ++
+                    if(obj[key].excellent === 1 && obj[key].deleted === false){
+                        if(length >20){
+                            this.topicsList.splice(0,1,obj[key])
+                        }else{
+                            this.topicsList.push(obj[key])
+                        }
+                    }
+                }
+
+            })
+        },
+        getNodes(){
+            api({
+                url: '/api/v3/nodes',
+            }).then((resp) => {
+                // console.info(self.nodesList)
+            })
+        }
+    },
     created(){
-        this.getuserinfo()
+        this.getTopics()
+        this.getNodes()
     }
    
 }

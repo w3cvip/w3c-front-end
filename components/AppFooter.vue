@@ -57,43 +57,5 @@ export default {
 }
 </script>
 <style>
-.footer{
-    margin-top: 10px;
-    margin-bottom: 0px!important;
-    color: #9CA4A9;
-    background-color: #FFFFFF;
-    padding: 30px 0;
-    font-size: 14px;
-}
-.footer_content{
-    width: 1200px;
-    margin: 0 auto;
-}
-.footer_logo{
-    width: 100%;
-}
-.footer_logo img {
-    width: 100%;
-    position: relative;
-    top: -14px;
-}
-.footer_desc div{
-    line-height: 1.8;
-}
-.footer_desc .links{
-    color: #ddd;
-}
-.footer_desc .links a{
-    margin-right: 5px;
-    color: #9CA4A9;
-}
-.footer_desc .links a:hover{
-    color: #409EFF;
-    border-bottom: 1px dashed #409EFF; 
-}
-@media screen and (max-width: 1200px){
-    .footer_content{
-        width: 100%;
-    }
-}
+
 </style>

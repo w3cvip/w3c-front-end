@@ -1,7 +1,4 @@
 module.exports = {
-    /*
-    ** Headers of the page
-    */
     head: {
         title: 'w3c-前端社区',
         meta: [
@@ -16,17 +13,8 @@ module.exports = {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
-    /*
-    ** Customize the progress bar color
-    */
     loading: { color: '#3B8070' },
-    /*
-    ** Build configuration
-    */
     build: {
-        /*
-        ** Run ESLint on save
-        */
         extend (config, { isDev, isClient }) {
             if (isDev && isClient) {
                 config.module.rules.push({
@@ -41,7 +29,8 @@ module.exports = {
     },
     plugins: [
         '~/plugins/iview',
-        '~/plugins/element-ui'
+        '~/plugins/element-ui',
+        '~/plugins/axios'
     ],
     css: [
         '~/static/css/style.css',
@@ -52,6 +41,22 @@ module.exports = {
     cache: {
         max: 1000,
         maxAge: 900000
+    },
+    modules: [
+        '@nuxtjs/axios',
+        '@nuxtjs/proxy'
+    ],
+    axios: {
+        baseURL:'localhost:3000',
+        https:true,
+        //代理设置
+        proxy: false,
+        debug:true,
+        //设置请求次数
+    },
+    proxy: {
+        // '/api/': 'https://github.com',
+        '/api/': { target: 'https://github.com', pathRewrite: {'^/api/': 'authorize'} }
     }
 }
 

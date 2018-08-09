@@ -1,4 +1,5 @@
 <template>
+
     <div class="login">
         <div class="login_content">
             <div class="login_logo">
@@ -25,10 +26,10 @@
                 <p>使用其他平台的帐号登录到社区</p>
             </div>
             <div class="login_third">
-                <nuxt-link to="/"><i class="iconfont icon-GitHub"></i></nuxt-link>
-                <nuxt-link to="/"><i class="iconfont icon-weixin"></i></nuxt-link>
-                <nuxt-link to="/"><i class="iconfont icon-weibo"></i></nuxt-link>
-                <nuxt-link to="/"><i class="iconfont icon-twitter"></i></nuxt-link>
+                <el-button type="text" @click.native="loginGithub()"><i class="iconfont icon-GitHub"></i></el-button>
+                <el-button type="text" @click.native="loginWeixin()"><i class="iconfont icon-weixin"></i></el-button>
+                <el-button type="text" @click.native="loginWeibo()"><i class="iconfont icon-weibo"></i></el-button>
+                <el-button type="text" @click.native="loginTwitter()"><i class="iconfont icon-twitter"></i></el-button>
             </div>
         </div>
         <div class="login_footer">
@@ -74,6 +75,26 @@ export default {
                 }
             });
         },
+        loginGithub(){
+            this.$axios.$get('/login/oauth/authorize',{
+                params:{
+                    client_id:'f147bfdd6085b8b13fa5'
+                }
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            })
+        },
+        loginWeixin(){
+
+        },
+        loginWeibo(){
+            
+        },
+        loginTwitter(){
+            
+        }
     }
    
 }

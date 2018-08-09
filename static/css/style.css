@@ -428,25 +428,25 @@ body {
 .login_third{
     margin-bottom: 30px;
 }
-.login_third a{
+.login_third button{
     width: 50px;
     text-align: center;
     margin: 0px 20px;
 }
-.login_third a i{
+.login_third button i{
     font-size: 24px;
     text-align: center;
 }
-.login_third a:nth-child(1) i{
+.login_third button:nth-child(1) i{
     color: #191717;
 }
-.login_third a:nth-child(2) i{
+.login_third button:nth-child(2) i{
     color: #69d66a;
 }
-.login_third a:nth-child(3) i{
+.login_third button:nth-child(3) i{
     color: #da6661;
 }
-.login_third a:nth-child(4) i{
+.login_third button:nth-child(4) i{
     color: #6aabe8;
 }
 .login_footer{
@@ -456,7 +456,7 @@ body {
     text-align: center;
 }
 @media screen and (max-width: 1200px){
-    .topics_hcontent,.login_content,..footer_content{
+    .topics_hcontent,.login_content,.footer_content{
         width: 100%;
     }
 

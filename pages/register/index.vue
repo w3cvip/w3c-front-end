@@ -28,10 +28,10 @@
                 <p>使用其他平台的帐号登录到社区</p>
             </div>
             <div class="login_third">
-                <nuxt-link to="/"><i class="iconfont icon-GitHub"></i></nuxt-link>
-                <nuxt-link to="/"><i class="iconfont icon-weixin"></i></nuxt-link>
-                <nuxt-link to="/"><i class="iconfont icon-weibo"></i></nuxt-link>
-                <nuxt-link to="/"><i class="iconfont icon-twitter"></i></nuxt-link>
+                <el-button type="text" @click.native="loginGithub()"><i class="iconfont icon-GitHub"></i></el-button>
+                <el-button type="text" @click.native="loginWeixin()"><i class="iconfont icon-weixin"></i></el-button>
+                <el-button type="text" @click.native="loginWeibo()"><i class="iconfont icon-weibo"></i></el-button>
+                <el-button type="text" @click.native="loginTwitter()"><i class="iconfont icon-twitter"></i></el-button>
             </div>
             <div class="reg_needknow">
                 注册即代表您同意《<nuxt-link to="/">w3c社区用户需知</nuxt-link>》
@@ -90,6 +90,18 @@ export default {
                 }
             });
         },
+        loginGithub(){
+
+        },
+        loginWeixin(){
+
+        },
+        loginWeibo(){
+            
+        },
+        loginTwitter(){
+            
+        }
     }
    
 }

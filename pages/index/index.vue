@@ -169,8 +169,6 @@
     </div>
 </template>
 <script>
-import api from '~/untils/api'
-import axios from 'axios'
 export default {
     data() {
         return {
@@ -190,12 +188,12 @@ export default {
     },
     methods:{
         getTopics(){
-            api({
-                url: '/api/v3/topics',
-                data:{
+            let self = this
+            self.$axios.$get('/api/v3/topics',{
+                params:{
                     limit:100
-                }
-            }).then((resp) => {
+                },
+            }).then(function (response) {
                 let length = 0
                 let obj = resp.data.topics
                 for(let key in obj){
@@ -208,15 +206,22 @@ export default {
                         }
                     }
                 }
-
+            }).catch(function (error) {
+                console.log(error);
             })
         },
         getNodes(){
-            api({
-                url: '/api/v3/nodes',
-            }).then((resp) => {
-                // console.info(self.nodesList)
+            let self = this
+            self.$axios.$get('/api/v3/nodes',{
+                params:{
+                    limit:100
+                },
+            }).then(function (response) {
+                
+            }).catch(function (error) {
+                console.log(error);
             })
+            
         }
     },
     created(){

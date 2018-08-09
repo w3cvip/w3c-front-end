@@ -14,6 +14,9 @@ module.exports = {
         ]
     },
     loading: { color: '#3B8070' },
+    router: {
+        middleware: 'auth'
+    },
     build: {
         extend (config, { isDev, isClient }) {
             if (isDev && isClient) {
@@ -47,8 +50,8 @@ module.exports = {
         '@nuxtjs/proxy'
     ],
     axios: {
-        baseURL:'localhost:3000',
-        https:true,
+        baseURL:'http://localhost:3000',
+        https:false,
         //代理设置
         proxy: false,
         debug:true,
@@ -56,7 +59,7 @@ module.exports = {
     },
     proxy: {
         // '/api/': 'https://github.com',
-        '/api/': { target: 'https://github.com', pathRewrite: {'^/api/': 'authorize'} }
+        '/login/': { target: 'https://github.com', pathRewrite: {'^/login/': 'authorize'} }
     }
+    
 }
-

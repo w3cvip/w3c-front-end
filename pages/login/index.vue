@@ -1,6 +1,5 @@
 <template>
-
-    <div class="login">
+    <div class="login" v-if="html === ''">
         <div class="login_content">
             <div class="login_logo">
                 <img src="~/static/images/logo/logo.png" alt="" srcset="">
@@ -33,7 +32,7 @@
             </div>
         </div>
         <div class="login_footer">
-                © 2017-2018   W3CVIP.ORG · 蜀ICP备14031517号-12 · ♥ w3c社区 & Design by W3CVIP.ORG.
+            © 2017-2018   W3CVIP.ORG · 蜀ICP备14031517号-12 · ♥ w3c社区 & Design by W3CVIP.ORG.
         </div>
     </div>
 </template>
@@ -41,6 +40,7 @@
 export default {
     data() {
         return {
+            html:'',
             title: '登录',
             loginForm: {
                 login: '',
@@ -53,7 +53,7 @@ export default {
                 password: [
                     { required: true, message: '请输入你的账户密码', trigger: 'blur' },
                 ]
-            }
+            },
         };
     },
     head () {
@@ -76,15 +76,19 @@ export default {
             });
         },
         loginGithub(){
-            this.$axios.$get('/login/oauth/authorize',{
-                params:{
-                    client_id:'f147bfdd6085b8b13fa5'
-                }
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            })
+            // let self = this
+            // self.$axios.$get('/login/oauth/authorize',{
+            //     params:{
+            //         client_id:'f147bfdd6085b8b13fa5',
+            //         scope:'user,email,public_repo',
+            //         state:'a23d34ar23a23e2da212s'
+            //     },
+            // }).then(function (response) {
+            //     self.html = response
+            // }).catch(function (error) {
+            //     console.log(error);
+            // })
+            window.open("https://github.com/login/oauth/authorize?client_id=f147bfdd6085b8b13fa5&&scope=user,email,public_repo&&state=a23d34ar23a23e2da212s",'_blank');
         },
         loginWeixin(){
 

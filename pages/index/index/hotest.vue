@@ -1,17 +1,19 @@
 <template>
-    <div class="">
-        <div class="">
-            {{name}}
-        </div>
+    <div class="hotest">
+        hotest
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            name: 'wiki',
         };
     },
+    methods:{
+       
+    },
+    created(){
+    }
    
 }
 </script>

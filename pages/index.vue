@@ -19,7 +19,7 @@ import AppFooter from '~/components/AppFooter.vue'
 export default {
     data () {
         return {
-            title: 'Hello World!'
+            title: 'w3cool - 高品质的开发者社区'
         }
     },
     components: {

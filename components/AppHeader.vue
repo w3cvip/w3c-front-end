@@ -6,10 +6,10 @@
                     <el-col :span="16" class="header_menu">
                         <el-menu class="el-menu-demo" mode="horizontal" router :default-active="activeIndex" @select="handleSelect">
                             <el-menu-item index="/">w3cvip</el-menu-item>
-                            <el-menu-item index="/topics">社区</el-menu-item>
-                            <el-menu-item index="/posts">头条</el-menu-item>
-                            <el-menu-item index="/jobs">招聘</el-menu-item>
-                            <el-menu-item index="/wiki">Wiki</el-menu-item>
+                            <el-menu-item index="/">首页</el-menu-item>
+                            <el-menu-item index="/find">发现</el-menu-item>
+                            <el-menu-item index="/square">广场</el-menu-item>
+                            <el-menu-item index="/posts">专栏</el-menu-item>
                             <el-menu-item index="/sites">酷站</el-menu-item>
                         </el-menu>
                     </el-col>
@@ -50,7 +50,7 @@ export default {
     data() {
         return {
             search:'',
-            activeIndex: '/topics',
+            activeIndex: '/',
         };
     },
     methods: {

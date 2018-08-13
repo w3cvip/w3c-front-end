@@ -1,170 +1,124 @@
 <template>
     <div class="index">
         <div class="index_content">
-            <div class="index_ad">
-                <Card>
-                    你终于找到了我。其实，我一直都在你身边...
-                </Card>
-            </div>
-            
-            <div class="index_guide">
-                <el-row type="flex" class="row-bg" :gutter="20">
-                    <el-col :span="6">
-                        <div class="">
-                            <Card>
-                                <div class="index_item">
-                                    <div class="index_icon">
-                                        <svg class="icon" aria-hidden="true">
-                                            <use xlink:href="#icon-pinglun"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="text">
-                                        <nuxt-link to="/topics">前端社区<i class="iconfont icon-jiantouarrow484"></i></nuxt-link>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
-                    </el-col>
-                    <el-col :span="6">
-                        <div class="">
-                            <Card>
-                                <div class="index_item">
-                                    <div class="index_icon">
-                                        <svg class="icon" aria-hidden="true">
-                                            <use xlink:href="#icon-tubiaozhizuomobanyihuifu-"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="text">
-                                        <nuxt-link to="/topics">技术文档<i class="iconfont icon-jiantouarrow484"></i></nuxt-link>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
-                    </el-col>
-                    <el-col :span="6">
-                        <div class="">
-                            <Card>
-                                <div class="index_item">
-                                    <div class="index_icon">
-                                        <svg class="icon" aria-hidden="true">
-                                            <use xlink:href="#icon-drxx59"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="text">
-                                        <nuxt-link to="/topics">招聘求职<i class="iconfont icon-jiantouarrow484"></i></nuxt-link>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
-                    </el-col>
-                    <el-col :span="6">
-                        <div class="">
-                            <Card>
-                                <div class="index_item">
-                                    <div class="index_icon">
-                                        <svg class="icon" aria-hidden="true">
-                                            <use xlink:href="#icon-zuanshi"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="text">
-                                        <nuxt-link to="/topics">精华帖子<i class="iconfont icon-jiantouarrow484"></i></nuxt-link>
-                                    </div>
-                                </div>
-                            </Card>
-                        </div>
-                    </el-col>
-                </el-row>
-            </div>
-            <div class="index_essence">
-                <Card>
-                    <p slot="title">社区精华帖</p>
-                    <div class="topic_list">
-                        <div class="topic_info" v-for="item in topicsList" :key="item.id">
-                            <div class="topic_img">
-                                <nuxt-link to="/users/es6china">
-                                    <img :src="item.user.avatar_url" alt="" srcset="">
-                                </nuxt-link>
+            <el-row type="flex" :gutter="20">
+                <el-col :span="18">
+                    <div class="content_list">
+                        <div class="node_card">
+                            <el-button type="text">所有节点</el-button>
+                            <div class="node_title">
+                                -(小程序)共有 114 个讨论主题
                             </div>
-                            <div class="topic_content">
-                                <nuxt-link to="/topics" class="node_title">
-                                    <div class="topic_title">
-                                        <span class="node">{{item.node_name}}</span> {{item.title | topicsTitle}}
-                                        <el-tooltip class="item" effect="dark" content="精华帖" placement="top">
-                                            <i class="iconfont icon-zuanshi"></i>
-                                        </el-tooltip>
+                            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleRouter">
+                                <el-menu-item index="default">默认</el-menu-item>
+                                <el-menu-item index="newest">最新</el-menu-item>
+                                <el-menu-item index="popular">精选</el-menu-item>
+                                <el-menu-item index="hotest">最热</el-menu-item>
+                                <el-menu-item index="noreply">零回复</el-menu-item>
+                            </el-menu>
+                        </div>
+                        <div class="index_topics">
+                            <div class="topics_list" v-for="o in 20" :key="o">
+                                <div class="user_avatar">
+                                    <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
+                                </div>
+                                <div class="topics_info">
+                                    <div class="title">
+                                        <nuxt-link to="/">
+                                            <span>微信开发</span>小程序网络请求封装 (Promise)
+                                            <el-tooltip class="item" effect="dark" content="置顶帖" placement="top">
+                                                <i class="iconfont icon-sendo"></i>
+                                            </el-tooltip>
+                                            <el-tooltip class="item" effect="dark" content="精华帖" placement="top">
+                                                <i class="iconfont icon-diamond"></i>
+                                            </el-tooltip>
+                                        </nuxt-link>
                                     </div>
-                                </nuxt-link>
-                                <div class="topic_user">
-                                    <nuxt-link to="/users/es6china">{{item.user.login}}</nuxt-link> • 1068 次阅读 • 最后由<nuxt-link to="/users/es6china">{{item.last_reply_user_login}}</nuxt-link>回复于 <Time :time="item.created_at"/>
+                                    <div class="info">
+                                        <nuxt-link to="/"> es6china </nuxt-link>• 最后由 <nuxt-link to="/"> 519802806 </nuxt-link> 回复于 20 天前 
+                                    </div>
+                                </div>
+                                <div class="topics_count">
+                                    <span title="点赞数">15</span>/
+                                    <span title="查看数">50</span>/
+                                    <span title="评论数">1200</span>
                                 </div>
                             </div>
-                            <div class="topic_repcount">
-                                <div class="badge">99</div>
+                            <div class="index_pagination">
+                                <el-pagination background @current-change="handleCurrentChange" :page-size="100" layout="prev, pager, next" :total="1000"></el-pagination>
                             </div>
                         </div>
                     </div>
-                </Card>
-            </div>
-            <div class="index_node">
-                <Card :bordered="false">
-                    <p slot="title">社区节点</p>
-                    <div class="node_list">
-                        <div class="node_info" v-for="item in nodesList" :key="item.id">
-                            <div class="node_root">
-                                {{item.section_name}}
+                </el-col>
+                <el-col :span="6">
+                    <div class="index_card">
+                        <el-card shadow="hover">
+                            <div class="text item">
+                                <el-button type="primary" size="medium">登录</el-button>
+                                <el-button type="primary" size="medium">注册</el-button>
                             </div>
-                            <div class="node_content">
-                                <span>
-                                    <a href="http://">{{item.name}}</a>
-                                </span>
+                        </el-card>
+                        <el-card shadow="hover">
+                            <div slot="header">
+                                <span>小帖士</span>
                             </div>
-                        </div>
+                            <div class="text item">
+                               语不惊人,不如不说
+                            </div>
+                        </el-card>
+                        <el-card shadow="hover" class="card_interested">
+                            <div slot="header">
+                                <span>你可能感兴趣的人</span>
+                            </div>
+                            <div v-for="o in 4" :key="o" class="text item">
+                                <div class="card_interested_list">
+                                    <div class="avatar">
+                                        <img src="https://ypy.w3cvip.org/user/avatar/1/1f59ef.jpg!md" alt="" srcset="">
+                                    </div>
+                                    <div class="info">
+                                        <span>googleChina</span>
+                                        <span>Google开发者</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </el-card>
+                        <el-card shadow="hover" class="card_info">
+                            <div slot="header">
+                                <span>热门话题</span>
+                            </div>
+                            <div v-for="o in 4" :key="o" class="text item">
+                                <nuxt-link to="/">程序猿,你也配吃 10 元的盒饭?</nuxt-link>
+                            </div>
+                        </el-card>
+                        <el-card shadow="hover" class="card_info">
+                            <div slot="header">
+                                <span>推荐资源</span>
+                            </div>
+                            <div v-for="o in 4" :key="o" class="text item">
+                               <nuxt-link to="/">程序猿,你也配吃 10 元的盒饭?</nuxt-link>
+                            </div>
+                        </el-card>
+                        <el-card shadow="hover">
+                            <div slot="header">
+                                <span>关注我们</span>
+                            </div>
+                            <div class="text item">
+                                <img src="https://ypy.w3cvip.org/wxcode.jpg" style="width:48%;float:left；display:block">
+			                    <img src="https://ypy.w3cvip.org/QQcode.png" style="width:48%;float:right；display:block">
+                            </div>
+                        </el-card>
+                        <el-card shadow="hover">
+                            <div slot="header">
+                                <span>友情社区</span>
+                            </div>
+                            <div v-for="o in 4" :key="o" class="text item">
+                                {{'社区 ' + o }}
+                            </div>
+                        </el-card>
                     </div>
-                </Card>
-            </div>
-            <div class="index_city">
-                <Card :bordered="false">
-                    <p slot="title">热门城市</p>
-                    <div class="city_list">
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                        <span>
-                            <a href="http://">北京</a>
-                        </span>
-                    </div>
-                </Card>
-            </div>
+                </el-col>
+            </el-row>
         </div>
     </div>
 </template>
@@ -172,11 +126,14 @@
 export default {
     data() {
         return {
+            pagerCount:20,
+            activeIndex: 'default',
             topicsList:[],
             nodesList:[],
             sourceMaps:{},
             nameMaps:{},
             name: '11111',
+            currentPage:3,
             time: (new Date()).getTime() - 60 * 3 * 1000,
 
         };
@@ -222,11 +179,30 @@ export default {
                 console.log(error);
             })
             
+        },
+        handleRouter(key, keyPath) {
+            // console.log(key);
+            if(key === 'newest'){               //最新
+                console.log('newest');
+            }else if(key === 'popular'){        //精选
+                console.log('popular');
+            }else if(key === 'hotest'){         //最热
+                console.log('hotest');
+            }else if(key === 'noreply'){        //零回复
+                console.log('noreply');
+            }else{                              //默认
+                console.log('default');
+            }
+        },
+        handleSizeChange(val) {
+            console.log(`每页 ${val} 条`);
+        },
+        handleCurrentChange(val) {
+            console.log(`当前页: ${val}`);
         }
     },
     created(){
-        this.getTopics()
-        this.getNodes()
+        this.handleRouter()
     }
    
 }

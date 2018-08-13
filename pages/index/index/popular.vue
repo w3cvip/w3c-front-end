@@ -1,17 +1,19 @@
 <template>
     <div class="">
-        <div class="">
-            {{name}}
-        </div>
+        pop
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            name: 'jobs',
         };
     },
+    methods:{
+       
+    },
+    created(){
+    }
    
 }
 </script>

@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="topics_info">
                                     <div class="title">
-                                        <nuxt-link to="/">
+                                        <nuxt-link to="topics/50">
                                             <span>微信开发</span>小程序网络请求封装 (Promise)
                                             <el-tooltip class="item" effect="dark" content="置顶帖" placement="top">
                                                 <i class="iconfont icon-sendo"></i>

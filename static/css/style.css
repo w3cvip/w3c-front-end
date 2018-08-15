@@ -1,4 +1,4 @@
-@import '//at.alicdn.com/t/font_772287_k9rudrkbv1.css';
+@import '//at.alicdn.com/t/font_772287_9vb8nrkh2ul.css';
 
 .el-menu .el-menu-item{
     font-size: 14px;
@@ -744,6 +744,93 @@ body {
 }
 .common_card .text a:last-child{
     border: none;
+}
+.topics_share{
+    position: fixed;
+    margin-left: -80px;
+    top: 200px;
+}
+.topics_share .options div{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.04);
+    cursor: pointer;
+}
+.topics_share .options div i{
+    color: #999;
+    font-size: 18px;
+}
+.topics_share .options div:nth-child(1):hover i{
+    color:#2d8cf0;
+}
+.topics_share .options div:hover i{
+    color: #e76f3c;
+}
+.topics_share .options div.el-badge .el-badge__content{
+    padding: .1rem .4rem;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #c6c6c6;
+    border-radius: .7rem;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(.75);
+    transform: scale(.75);
+    color: #fff;
+    background-color: #c6c6c6;
+    right: -9px;
+    top: -4px;
+}
+.topics_share .title{
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+}
+.topics_share .share span{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.04);
+    cursor: pointer;
+}
+.topics_share .share span i{
+    color: #999;
+    font-size: 18px;
+}
+.topics_share .share span:nth-child(1):hover i{
+    color:#67c23a;
+}
+.topics_share .share span:nth-child(2):hover i{
+    color:#f77c3d;
+}
+.topics_share .share span:nth-child(3):hover i{
+    color:#fbc813;
+}
+.topics_share .share span:nth-child(4):hover i{
+    color:#1da1f2;
+}
+.topics_share .share span:nth-child(5):hover i{
+    color:#3b5998;
 }
 @media screen and (max-width: 1200px){
     .topics_hcontent,.login_content,.footer_content,.sites,.topics_id{

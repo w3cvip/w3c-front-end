@@ -9,7 +9,7 @@
                             <el-menu-item index="/">首页</el-menu-item>
                             <el-menu-item index="/find">发现</el-menu-item>
                             <el-menu-item index="/square">广场</el-menu-item>
-                            <el-menu-item index="/posts">专栏</el-menu-item>
+                            <el-menu-item index="/posts">头条</el-menu-item>
                             <el-menu-item index="/sites">酷站</el-menu-item>
                         </el-menu>
                     </el-col>

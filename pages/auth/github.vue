@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    middleware: 'auth',
+    middleware:"auth",
     data() {
         return {
             title:'shouquan',
@@ -29,7 +29,7 @@ export default {
             // }).catch(function (error) {
             //     console.log(error);
             // })
-            this.$router.push('/')
+            // this.$router.push('/')
         }
     },
     created(){

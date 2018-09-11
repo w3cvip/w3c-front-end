@@ -513,6 +513,7 @@ body {
     background-color: #ffffff;
     width: 100%;
     padding: 20px 20px;
+    font-size: 15px;
 }
 .topics_replay{
     margin: 20px 0px;
@@ -831,6 +832,138 @@ body {
 }
 .topics_share .share span:nth-child(5):hover i{
     color:#3b5998;
+}
+.posts{
+    width: 100%;
+}
+.posts_content{
+    width: 1200px;
+    margin: 0 auto;
+}
+.post_gallery{
+    background-color: #fff;
+    padding: 15px;
+    border: 1px #dddddd solid;
+    position: relative;
+    font-size: 12px;
+}
+.post_gallery_info{
+    width: 100%;
+}
+.postgrid {
+    overflow: hidden;
+}
+.postgrid h2 {
+    font-size: 14px;
+    margin: 8px 0 4px;
+}
+.postgrid .homeinfo {
+    margin: 2px 0 12px;
+    color: #999;
+}
+figure a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+figure a img {
+    height: auto;
+    display: block;
+    max-width: 100%;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+    transition: all 400ms linear 0s;
+    opacity: 1 !important;
+}
+
+figure a img:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.homeinfo .category {
+    padding-right: 6px;
+    position: relative;
+    display: inline-block;
+    max-width: 50%;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.homeinfo .date {
+    padding-left: 4px;
+}
+.homeinfo .like {
+    float: right;
+}
+.posts_list{
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px #dddddd solid;
+    margin: 20px 0;
+}
+.posts_list .list{
+    width: 100%;
+    border-bottom: 1px #dddddd solid;
+    padding: 15px;
+}
+.posts_list .list:last-child{
+    border: none;
+}
+.posts_list .list .info{
+    width: 100%;
+    display: flex;
+    line-height: 50px;
+}
+.posts_list .list .info .date{
+    width: 100px;
+}
+.posts_list .list .info .avatr{
+    width: 50px;
+    height: 50px;
+}
+.posts_list .list .info .avatr img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.posts_list .list .info .berif{
+    flex: 1;
+}
+.posts_list .list .info .berif b{
+    margin-right: 10px;
+}
+.posts_list .list .text p{
+    text-indent: 25px;
+    font-size: 13px;
+}
+.posts_list .list .option{
+    width: 100%;
+    display: flex;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #999999;
+}
+.posts_list .list .option .item{
+    margin: 0px 10px;
+}
+.posts_list .list .option .item i{
+    font-size: 14px;
+}
+.posts_list .list .option .item i:before{
+    margin-right: 5px;
+}
+.posts_list .list .option .item:first-child{
+    margin: 0;
+    margin-right: 10px;
+}
+.el-popover{
+    min-width: 40px!important;
+    padding: 1px!important;
+    text-align: center!important;
 }
 @media screen and (max-width: 1200px){
     .topics_hcontent,.login_content,.footer_content,.sites,.topics_id{

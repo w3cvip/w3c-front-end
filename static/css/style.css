@@ -6,10 +6,9 @@
 html {
 }
 body {
-    /* font-family: Helvetica, Arial, "PingFang SC", "Noto Sans", Roboto, "Microsoft Yahei", sans-serif!important; */
     font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
     letter-spacing: .03em;
-    font-size: 16px;
+    font-size: 14px!important;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -19,7 +18,7 @@ body {
     background: #e5e5e5!important;
     color: #333333!important;
     padding-top: 65px!important;
-    letter-spacing: .03em;
+    letter-spacing: .03em!important;
 }
 
 .header_menu .el-menu--horizontal>.el-menu-item{
@@ -120,7 +119,7 @@ body {
     background-color: #FFFFFF;
     color: #9CA4A9;
     font-size: 14px;
-    z-index: 1;
+    z-index: 99;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 }
@@ -128,6 +127,14 @@ body {
     width: 1200px;
     margin: 0 auto;
     height: 50px;
+}
+
+.index_card .el-card .el-card__header {
+    background: #fafafa;
+    padding: 6px 15px!important;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    color: #777;
 }
 .header_content{
     
@@ -426,6 +433,7 @@ body {
 }
 .card_interested_list .info{
     flex: 1;
+    line-height: 20px;
 }
 .card_interested_list .info span{
     display: block;
@@ -905,6 +913,9 @@ figure a img:hover {
     border: 1px #dddddd solid;
     margin: 20px 0;
 }
+.posts_panel{
+    margin: 20px 0;
+}
 .posts_list .list{
     width: 100%;
     border-bottom: 1px #dddddd solid;
@@ -965,9 +976,32 @@ figure a img:hover {
     padding: 1px!important;
     text-align: center!important;
 }
+.posts_panel .el-card{
+    border: none;
+    border-radius:0;
+    box-shadow:none;
+}
+.posts_panel .el-card .el-carousel__item{
+    /* padding: 15px; */
+}
+.posts_panel .el-card .el-carousel__item p{
+    color: #999999;
+    text-align:justify;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.posts_panel .el-card .el-carousel__item h3{
+    text-align: center;
+}
+.posts_panel .el-card .el-card__header {
+    background: #fafafa;
+    padding: 10px 15px!important;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    color: #777;
+}
 @media screen and (max-width: 1200px){
     .topics_hcontent,.login_content,.footer_content,.sites,.topics_id{
         width: 100%;
     }
-
 }
